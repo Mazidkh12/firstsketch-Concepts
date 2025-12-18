@@ -50,6 +50,9 @@ jspm_packages/
 uploads/
 temp/
 
+# Vercel
+.vercel
+
 # IDE files
 .vscode/
 .idea/

@@ -90,14 +90,14 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-  console.log(`📱 Environment: ${process.env.NODE_ENV || 'development'}`);
-  if (process.env.NODE_ENV === 'production') {
-    console.log(`🌐 Health check: https://your-domain.com/api/health`);
-  } else {
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`📱 Environment: ${process.env.NODE_ENV || 'development'}`);
     console.log(`🌐 Health check: http://localhost:${PORT}/api/health`);
-  }
-});
+  });
+}
 
+// Export for Vercel
 module.exports = app;
