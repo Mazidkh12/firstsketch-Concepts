@@ -41,6 +41,31 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/firstsket
 .then(() => console.log('✅ Connected to MongoDB'))
 .catch(err => console.error('❌ MongoDB connection error:', err));
 
+// Root route - API information
+app.get('/', (req, res) => {
+  res.json({
+    name: 'FirstSketch Concepts API',
+    version: '1.0.0',
+    description: 'Backend API for FirstSketch Concepts - Architecture & Interior Design',
+    status: 'Running',
+    timestamp: new Date().toISOString(),
+    endpoints: {
+      health: '/api/health',
+      home: '/api/home',
+      services: '/api/services',
+      projects: '/api/projects',
+      company: '/api/company',
+      contact: '/api/contact',
+      admin: '/api/admin'
+    },
+    contact: {
+      email: 'firstskechconcepts@gmail.com',
+      phone: '+91-6282570226',
+      address: 'Beach road, Tanur, Malappuram, Kerala'
+    }
+  });
+});
+
 // Routes
 app.use('/api/home', require('./routes/home'));
 app.use('/api/contact', require('./routes/contact'));
