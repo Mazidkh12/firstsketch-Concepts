@@ -10,8 +10,9 @@ export default function Header() {
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/services", label: "Services" },
-    { path: "/contact", label: "Contact Us" },
+    { path: "/portfolio", label: "Portfolio" },
     { path: "/about", label: "About Us" },
+    { path: "/contact", label: "Contact Us" },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -40,8 +41,31 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link
             to="/"
-            className="flex items-center gap-2 transition-opacity hover:opacity-80"
+            className="flex items-center gap-3 transition-opacity hover:opacity-80"
           >
+            <div className={`w-8 h-8 md:w-10 md:h-10 transition-colors duration-300 ${
+              scrolled || !isHomePage ? "text-gray-900" : "text-white"
+            }`}>
+              <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="96" height="96" stroke="currentColor" strokeWidth="2" fill="none"/>
+                <line x1="12" y1="15" x2="85" y2="12" stroke="currentColor" strokeWidth="1.5"/>
+                <line x1="12" y1="20" x2="88" y2="18" stroke="currentColor" strokeWidth="1.5"/>
+                <line x1="12" y1="25" x2="88" y2="25" stroke="currentColor" strokeWidth="1.5"/>
+                <line x1="12" y1="30" x2="85" y2="32" stroke="currentColor" strokeWidth="1.5"/>
+                <line x1="12" y1="35" x2="88" y2="35" stroke="currentColor" strokeWidth="1.5"/>
+                <line x1="12" y1="40" x2="88" y2="40" stroke="currentColor" strokeWidth="1.5"/>
+                <line x1="12" y1="48" x2="88" y2="48" stroke="currentColor" strokeWidth="1.5"/>
+                <line x1="12" y1="52" x2="85" y2="54" stroke="currentColor" strokeWidth="1.5"/>
+                <line x1="12" y1="56" x2="88" y2="56" stroke="currentColor" strokeWidth="1.5"/>
+                <line x1="12" y1="60" x2="88" y2="60" stroke="currentColor" strokeWidth="1.5"/>
+                <line x1="12" y1="64" x2="85" y2="66" stroke="currentColor" strokeWidth="1.5"/>
+                <line x1="12" y1="72" x2="88" y2="72" stroke="currentColor" strokeWidth="1.5"/>
+                <line x1="12" y1="76" x2="85" y2="78" stroke="currentColor" strokeWidth="1.5"/>
+                <line x1="12" y1="80" x2="88" y2="80" stroke="currentColor" strokeWidth="1.5"/>
+                <line x1="12" y1="84" x2="85" y2="86" stroke="currentColor" strokeWidth="1.5"/>
+                <line x1="12" y1="88" x2="88" y2="88" stroke="currentColor" strokeWidth="1.5"/>
+              </svg>
+            </div>
             <div className={`text-xl md:text-2xl font-bold transition-colors duration-300 ${
               scrolled || !isHomePage ? "text-gray-900" : "text-white"
             }`}>

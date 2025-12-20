@@ -18,7 +18,7 @@ export default function Footer() {
         console.error('Error fetching footer data:', error);
         // Use fallback data
         setContactInfo({
-          email: 'firstskechconcepts@gmail.com',
+          email: 'firstsketchconcepts@gmail.com',
           phone: '+91-6282570226',
           address: {
             company: 'Firstsketch concepts',
@@ -67,6 +67,7 @@ export default function Footer() {
               <li><Link to="/" className="text-gray-600 hover:text-gray-900 transition">Home</Link></li>
               <li><Link to="/about" className="text-gray-600 hover:text-gray-900 transition">About Us</Link></li>
               <li><Link to="/services" className="text-gray-600 hover:text-gray-900 transition">Services</Link></li>
+              <li><Link to="/portfolio" className="text-gray-600 hover:text-gray-900 transition">Portfolio</Link></li>
               <li><Link to="/contact" className="text-gray-600 hover:text-gray-900 transition">Contact</Link></li>
             </ul>
           </div>
@@ -76,7 +77,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-gray-600">
               <li className="flex items-center gap-2">
                 <span>📧</span>
-                <span>{contactInfo.email || 'firstskechconcepts@gmail.com'}</span>
+                <span>{contactInfo.email || 'firstsketchconcepts@gmail.com'}</span>
               </li>
               <li className="flex items-center gap-2">
                 <span>📞</span>

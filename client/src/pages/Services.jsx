@@ -17,24 +17,35 @@ export default function Services() {
     architecture: [
     {
       id: 1,
-      title: "Modern Residential Complex",
+      title: "Modern Tropical Villa",
       category: "Residential",
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
-      description: "Contemporary living spaces with sustainable design principles",
+      image: "/projects/firstsketch-modern-villa.jpg",
+      description: "Contemporary villa design inspired by nature with seamless indoor-outdoor living, natural materials, and tropical landscaping integration",
+      credit: "Design: FirstSketch Concepts | Rendering: RenderStudio by Shabeeb Sara",
+      featured: true
     },
     {
       id: 2,
-      title: "Corporate Office Tower",
-      category: "Commercial",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
-      description: "State-of-the-art office building with innovative facade design",
+      title: "Nice Public School Tanur",
+      category: "Educational",
+      image: "/projects/nice_public_school_1.webp",
+      description: "Modern educational facility designed with natural light, open learning spaces, and sustainable architecture for enhanced learning environment",
+      credit: "Design: FirstSketch Concepts",
+      featured: true
     },
     {
       id: 3,
-      title: "Luxury Villa",
+      title: "Sustainable Residential Complex",
       category: "Residential",
-      image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
-      description: "Elegant villa design blending modern and traditional elements",
+      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
+      description: "Contemporary living spaces with sustainable design principles and natural light optimization",
+    },
+    {
+      id: 4,
+      title: "Corporate Office Design",
+      category: "Commercial",
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
+      description: "Modern office building with innovative facade design and energy-efficient systems",
     },
     ],
     interior: [
@@ -201,7 +212,27 @@ export default function Services() {
     return (
       <div className="min-h-screen bg-stone-50 flex items-center justify-center pt-20">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 mx-auto"></div>
+          <div className="w-16 h-16 mx-auto animate-pulse text-gray-900">
+            <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="96" height="96" stroke="currentColor" strokeWidth="2" fill="none"/>
+              <line x1="12" y1="15" x2="85" y2="12" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="12" y1="20" x2="88" y2="18" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="12" y1="25" x2="88" y2="25" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="12" y1="30" x2="85" y2="32" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="12" y1="35" x2="88" y2="35" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="12" y1="40" x2="88" y2="40" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="12" y1="48" x2="88" y2="48" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="12" y1="52" x2="85" y2="54" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="12" y1="56" x2="88" y2="56" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="12" y1="60" x2="88" y2="60" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="12" y1="64" x2="85" y2="66" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="12" y1="72" x2="88" y2="72" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="12" y1="76" x2="85" y2="78" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="12" y1="80" x2="88" y2="80" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="12" y1="84" x2="85" y2="86" stroke="currentColor" strokeWidth="1.5"/>
+              <line x1="12" y1="88" x2="88" y2="88" stroke="currentColor" strokeWidth="1.5"/>
+            </svg>
+          </div>
           <p className="mt-4 text-gray-600">Loading services...</p>
         </div>
       </div>
@@ -277,8 +308,18 @@ export default function Services() {
                     </div>
                   </div>
                   <div className="mt-4">
-                    <h3 className="font-bold text-lg text-gray-900 tracking-wide">{project.title}</h3>
+                    <div className="flex items-center gap-2 mb-2">
+                      <h3 className="font-bold text-lg text-gray-900 tracking-wide">{project.title}</h3>
+                      {project.featured && (
+                        <span className="px-2 py-1 text-xs font-semibold bg-stone-200 text-gray-800 rounded-full">
+                          Featured
+                        </span>
+                      )}
+                    </div>
                     <p className="text-sm text-gray-700 mt-1 tracking-wide leading-relaxed">{project.description}</p>
+                    {project.credit && (
+                      <p className="text-xs text-gray-500 mt-2 italic">{project.credit}</p>
+                    )}
                   </div>
                 </div>
               ))}
